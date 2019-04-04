@@ -47,11 +47,12 @@ function getAverages() {
 
   // TODO figure out a better way to do this
   const entries = Object.entries(averages);
+  /* eslint-disable-next-line */
   for (const [property, value] of entries) {
     averages[`${property}`] = value / percentages.length;
   }
 
-  console.log(averages);
+  return averages;
 }
 
-getAverages();
+module.exports = getAverages;
