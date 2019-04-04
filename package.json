@@ -1,0 +1,12 @@
+{
+  "name": "running",
+  "version": "1.0.0",
+  "description": "Scripts for tracking and projecting running",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luke Ruokaismaki",
+  "license": "ISC",
+  "dependencies": {}
+}

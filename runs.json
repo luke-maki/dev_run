@@ -1,0 +1,52 @@
+{
+  "runs": [
+    {
+      "date": "6/03/2019",
+      "distance": 9.94,
+      "totalTime": 56,
+      "runningTime": 48
+    },
+    {
+      "date": "8/03/2019",
+      "distance": 5.87,
+      "totalTime": 35,
+      "runningTime": 28
+    },
+    {
+      "date": "13/03/2019",
+      "distance": 5.89,
+      "totalTime": 35,
+      "runningTime": 28
+    },
+    {
+      "date": "15/03/2019",
+      "distance": 4.16,
+      "totalTime": 30,
+      "runningTime": 25
+    },
+    {
+      "date": "17/03/2019",
+      "distance": 10.39,
+      "totalTime": 63,
+      "runningTime": 56
+    },
+    {
+      "date": "24/03/2019",
+      "distance": 10.23,
+      "totalTime": 66,
+      "runningTime": 60
+    },
+    {
+      "date": "27/03/2019",
+      "distance": 7.54,
+      "totalTime": 45,
+      "runningTime": 36
+    },
+    {
+      "date": "03/04/2019",
+      "distance": 7.47,
+      "totalTime": 45,
+      "runningTime": 36
+    }
+  ]
+}
