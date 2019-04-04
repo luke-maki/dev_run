@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 /**
  * * Creates a run
@@ -15,16 +16,17 @@ class Run {
    * * Add run to runs file
    */
   addRunToFile() {
+    const pathway = path.join(__dirname, '../data/runs.json');
     const run = {};
     run.date = this.date;
     run.distance = this.distance;
     run.totalTime = this.totalTime;
     run.runningTime = this.runningTime;
-    let file = fs.readFileSync('../data/runs.json', 'utf-8');
+    let file = fs.readFileSync(pathway, 'utf8');
     file = JSON.parse(file);
     file.runs.push(run);
     file = JSON.stringify(file);
-    fs.writeFileSync('../data/runs.json', file);
+    fs.writeFileSync(pathway, file);
   }
 }
 

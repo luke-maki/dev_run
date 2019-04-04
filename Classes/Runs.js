@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 /**
  * * Gathers data from runs
@@ -12,13 +13,16 @@ class Runs {
     this.calculateAverageWalkTime();
     this.calculateAverageRunDistance();
     this.calculateAverageWalkDistance();
+    this.calculateAverageRunSpeed();
+    this.calculateAverageWalkSpeed();
   }
 
   /**
    * * Gets run data
    */
   getData() {
-    let runData = fs.readFileSync('../data/runs.json', 'utf-8');
+    const pathway = path.join(__dirname, '../data/runs.json');
+    let runData = fs.readFileSync(pathway, 'utf8');
     runData = JSON.parse(runData);
     const { runs } = runData;
     this.runs = runs;
@@ -36,6 +40,18 @@ class Runs {
       data.walkDistance = run.distance - data.runDistance;
       this.percentages.push(data);
     });
+  }
+
+  /**
+   * * Plan run times
+   */
+  planRun(distance, runInterval, walkInterval) {
+    const runIntervalDistance = (runInterval / 60) * this.averageRunSpeed;
+    const walkIntervalDistance = (walkInterval / 60) * this.averageWalkSpeed;
+    const totalIntervalDistance = runIntervalDistance + walkIntervalDistance;
+    const howManyIntervals = distance / totalIntervalDistance;
+    const totalTime = howManyIntervals * (runInterval + walkInterval);
+    console.log(totalTime);
   }
 
   calculateAverageRunTime() {
@@ -87,4 +103,4 @@ class Runs {
 module.exports = Runs;
 
 const test = new Runs();
-console.log(test.averageRunTime);
+test.planRun(5, 5, 1);
